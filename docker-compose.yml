@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  vault-ca:
+    build: ./vault-ca
+    container_name: pam-vault
+    ports:
+      - "8080:8080"
+    networks:
+      - pam-network
+    volumes:
+      - ca-data:/etc/ssh/ca
+
+  signer-app:
+    build: ./signer-app
+    container_name: pam-signer
+    ports:
+      - "5000:5000"
+    networks:
+      - pam-network
+    depends_on:
+      - vault-ca
+    environment:
+      - VAULT_URL=http://vault-ca:8080
+
+  ssh-server:
+    build: ./ssh-server
+    container_name: pam-ssh-server
+    ports:
+      - "2223:22"
+    networks:
+      - pam-network
+    depends_on:
+      - vault-ca
+    volumes:
+      - ca-data:/etc/ssh/ca
+
+networks:
+  pam-network:
+    driver: bridge
+
+volumes:
+  ca-data:
+
+
