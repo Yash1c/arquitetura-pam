@@ -1,6 +1,3 @@
-Aqui está o README.md editado para o professor executar sem problemas:
-
-```markdown
 # 🔐 Sistema PAM - Autenticação com Certificados SSH Expiráveis
 
 ## 📋 Descrição do Projeto
@@ -311,16 +308,3 @@ docker compose down && docker compose up -d
 ---
 
 **🎉 Preparado para Demonstração!** Siga a sequência na ordem e qualquer problema consulte a seção de Solução de Problemas.
-```
-
-## 🎯 **Principais Melhorias para o Professor:**
-
-1. **✅ Configuração Python explícita** - criando venv e instalando pyotp
-2. **✅ Build Docker obrigatório** - antes de executar
-3. **✅ Sequência passo a passo** - na ordem correta
-4. **✅ Solução de problemas comum** - com comandos copy-paste
-5. **✅ Verificações intermediárias** - para confirmar cada etapa
-6. **✅ Resultado esperado claro** - mostrando o output ideal
-7. **✅ Comandos de verificação** - para debug rápido
-
-Agora o professor conseguirá executar sem problemas! 🚀
